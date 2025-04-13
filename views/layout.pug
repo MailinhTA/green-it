@@ -1,0 +1,41 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src='/javascripts/front-end.js')
+    meta(content='width=device-width' initial-scale='1' shrink-to-fit='no' name='viewport')
+
+body
+  img#backgroundimage(src="images/background.jpg" alt='background-image')
+  #overallNav
+    nav#nav
+      ul
+        li
+          a(href='/') Home
+        li
+          a(href='movies.pug') Movies
+        
+        li 
+          a#goToQuizz(href="/quiz.pug") Quiz
+
+        if !user
+          li
+            a#loginButton(href='/login.pug') Login
+          li
+            a(href='/register.pug') Register
+        else
+          li
+            a(href='/profile.pug') Profile 
+          li
+            a(href='/logout' action='/logout') Logout
+          if user.role == 'admin'
+            li
+              a(href='/admin.pug') Admin Panel
+      button.displaybuttons(onclick='hideNav()')
+        img#hamburger(src="/images/cross.png", alt="")
+    button.displaybuttons(onclick='displayNav()')
+      img#hamburger(src="/images/hamburger.png", alt="")
+  img#logo(src="/images/logo.png", alt="logo")
+
+  block content

@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  main
+  div#titles
+    h1#maintitle Welcome to RateMee 
+    p#subtitle We are happy to present the best movie rating website since RottenTomatoes
+
+  div#container 
+    p#presentation Let us introduce ourselves : <br> <br> We are Benjamin Mazzega and Edgar Brandenburg, early-stage developers of this movie-rating platform. 
+      | Our goal is to allow anyone to create a personal rating website, to reference all the film you watch, and note them !
+    section#links
+      a.redirectlinks(href='movies.pug') Check out all movies
+      if !user
+        a.redirectlinks(href='login.pug') Log in

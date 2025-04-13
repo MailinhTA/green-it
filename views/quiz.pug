@@ -1,0 +1,83 @@
+extends layout 
+
+block content
+    #container
+        
+        h1#title Quiz Activity
+        br
+        #grade #{grade} 
+        .error #{errorstatus}
+        form#quiz(action='/submitQuiz' method='POST') 
+            .question 
+                label(for="q1") Who is the director of Pulp Fiction ?
+                select#q1.inputform(name="q1")
+                    option(value="default" selected disabled) Choose an option
+                    option(value="Steven Spielberg") Steven Spielberg 
+                    option(value="Quentin Tarantino") Quentin Tarantino
+                    option(value="Martin Scorsese") Martin Scorsese 
+                    option(value="Mary Harron") Mary Harron
+                    option(value="Steve McQueen") Steve McQueen
+            .question 
+                label(for="q2") Which movie is not about the Second World War ?
+                select#q2.inputform(name="q2")
+                    option(value="default" selected disabled) Choose an option
+                    option(value="Hacksaw Ridge") Hacksaw Ridge
+                    option(value="Black Hawk Down") Black Hawk Down 
+                    option(value="Dunkirk") Dunkirk
+                    option(value="Saving Private Ryan") Saving Private Ryan
+                    option(value="Schindler's List") Schindler's List
+            .question 
+                label(for="q3") Which of these movies does not star the actor Brad Pitt ?
+                select#q3.inputform(name="q3")
+                    option(value="default" selected disabled) Choose an option
+                    option(value="The Big Short") The Big Short
+                    option(value="The Curious Case Of Benjamin Button") The Curious Case Of Benjamin Button
+                    option(value="World War Z") World War Z
+                    option(value="The Departed") The Departed 
+            .question 
+                label(for="q4") Which of these films is the oldest ?
+                select#q4.inputform(name="q4")
+                    option(value="default" selected disabled) Choose an option
+                    option(value="The Maltese Falcon") The Maltese Falcon
+                    option(value="Strangers on a Train") Strangers on a Train 
+                    option(value="Rebecca") Rebecca 
+                    option(value="Touch of Evil") Touch of Evil 
+                    option(value="The Night of the Hunter") The Night of the Hunter 
+            .question 
+                label(for="q5") Which movie is not animated by Pixar Studios ?
+                select#q5.inputform(name="q5")
+                    option(value="default" selected disabled) Choose an option
+                    option(value="WALL·E") WALL·E 
+                    option(value="The Lion King") The Lion King 
+                    option(value="Up") Up 
+                    option(value="Finding Nemo") Finding Nemo 
+                    option(value="Toy Story") Toy Story 
+            .question 
+                label(for="q6") Which movie does not include boxing fights ?
+                select#q6.inputform(name="q6")
+                    option(value="default" selected disabled) Choose an option
+                    option(value="Rocky") Rocky 
+                    option(value="Million Dollar Baby") Million Dollar Baby 
+                    option(value="The Fighter") The Fighter 
+                    option(value="Raging Bull") Raging Bull 
+                    option(value="The Blind Side") The Blind Side
+            .question 
+                label(for="q7") Which of these is recognized as one of the greatest horror movies of all times ?
+                select#q7.inputform(name="q7")
+                    option(value="default" selected disabled) Choose an option
+                    option(value="The Shining") The Shining 
+                    option(value="I Am Legend") I Am Legend 
+                    option(value="American Psycho") American Psycho 
+                    option(value="Zombieland") Zombieland 
+                    option(value="It") It 
+            .question 
+                label(for="q8") Who is, and by far, the best Web teacher in APU ?
+                select#q8.inputform(name="q8")
+                    option(value="default" selected disabled) Choose an option
+                    option(value="M. Roes") M. Roes 
+                    option(value="Brad Pitt") Brad Pitt 
+                    option(value="M. Sijore") M. Sijore 
+                    option(value="Kilian Mbappe") Kilian Mbappe 
+                    option(value="Flash McQueen") Flash McQueen 
+            button#submitbutton(type='submit') Get your results
+        

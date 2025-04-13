@@ -1,0 +1,54 @@
+extends layout 
+block content
+    #main
+        form#searchForm(action="/search") 
+            #filters
+                input#searchbar.searchfield(type="text" name="name" placeholder='eg : The Dark Knight')
+                select#category.searchfield(name="category" onchange="updateInput()" ) 
+                    option(value="*" default) Genre
+                    option(value="Action") Action
+                    option(value="Adventure") Adventure
+                    option(value="Animation") Animation
+                    option(value="Biography") Biography
+                    option(value="Comedy") Comedy
+                    option(value="Crime") Crime
+                    option(value="Drama") Drama
+                    option(value="Family") Family
+                    option(value="Fantasy") Fantasy
+                    option(value="Film-Noir") Film-Noir
+                    option(value="History") History
+                    option(value="Horror") Horror
+                    option(value="Mystery") Mystery
+                    option(value="Romance") Romance
+                    option(value="Sci-Fi") Sci-Fi
+                    option(value="Sport") Sport
+                    option(value="Thriller") Thriller
+                button#searchsubmit.searchfield(type="submit") Get Looking !
+        if error 
+            p#error= error
+        #moviescontainer
+            each movie in movies
+                button(data-movie-number=movie.movie_id onclick=`showMovie(${JSON.stringify(movie)}, this)` id='showButton'+movie.movie_id).moviecontainer  
+                    p(id='movieName'+movie.movie_id)= movie.movie_name
+                    img(src=movie.image id='movieImage'+movie.movie_id)
+     
+    img#blackscreen(src="/images/black.jpg", alt="")
+    #details 
+        button#closeButton(onclick='exitPopUp()' )
+            img(src="/images/cross.png", alt="cross")
+        #movieInfo 
+            img#currentMovieImage(src="/images/placeholder.jpg", alt="MovieImage")
+            #titleAndDescription
+                p#movieId Movie Id
+                h1#currentMovieName Title Of The Movie
+                p#currentMovieDir
+                p#currentMovieDescription Description of The movie  : Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor esse quos tempora. Fugiat quam aperiam, tempora nulla in sit repellendus quis labore a maiores at facilis deserunt, repellat ipsam quod.
+                p#currentMovieGenre
+                if user
+                    #rating 
+                        each star in [1, 2, 3, 4, 5]
+                            div.star(data-rating=star data-movie-id=0 onclick=`submitRating(this.getAttribute('data-rating'),document.getElementById('movieId').innerHTML, ${user.id});displayRating(this.getAttribute('data-rating'))`) ★
+                    #confirmRating
+                            
+                else 
+                    a#redirectLogin(href="login.pug") Login to rate this movie !
