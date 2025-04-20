@@ -1,0 +1,25 @@
+extends layout
+
+block content
+    #profilecontainer 
+    
+        #profileinfocontainer 
+
+            img#profilepicture(src="/images/pdp.png", alt="profilepicture")
+            h1#name #{user.username}
+        #restOfTheProfile 
+            #sidebar 
+                a#allmovies(href='/allRatings') See All Ratings
+                a#bestmovies(href='/bestRatings') Best Rated Movies
+                a#worstmovies(href='/worstRatings') Worst Rated Movies
+            #movies 
+                each movie in movies 
+                    #profileMovie
+                        div.moviecontainerProfile
+                            img(src=movie.image, alt="image:" + movie.name)
+                            h2 #{movie.movie_name}
+                        #grading 
+                            p.profileStars #{movie.user_rating} ★
+                            #deleteButton 
+                                a.deleteButton(href=`/deleteRating?movie_id=${movie.movie_id}` onclick="return confirmDelete(this.href)")
+                                    img(src="/images/cross.png", alt="delete")

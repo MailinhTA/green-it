@@ -1,0 +1,32 @@
+extends layout
+
+block content 
+    main 
+        #container
+            h2#logintitle 'Hello There !'
+            | - General Kenobi, Star Wars
+
+            br
+            br
+            form#loginform(action="/register" method='POST')
+                .error #{error.msg}
+                .error #{errorstatus}
+                field 
+                    label(for="First Name") First Name :    
+                    input.inputform(type="text" name="firstname" placeholder='')  
+                    label(for="Last Name") Last Name :    
+                    input.inputform(type="text" name="lastname" placeholder='')
+                    label(for="Email Adress") Email Adress :    
+                    input.inputform(type="email" name="email" placeholder='') 
+                    label(for="username") Username :    
+                    input.inputform(type="text" name="username" placeholder='')  
+                    label(for="password") Password :    
+                    input.inputform(type="password" name="password" placeholder='')
+                    label(for="password2") Confirm Password :    
+                    input.inputform(type="password" name="password2" placeholder='')  
+                
+                button#submitbutton(type='submit') Create Account
+                br
+            p Already Part of the galactic republic ?
+            a.simplelinks(href='/register.pug') Login Here !
+            a.simplelinks(href="https://www.vecteezy.com/free-vector/vector") Logo by Vecteezy

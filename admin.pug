@@ -1,0 +1,48 @@
+extends layout
+
+block content
+    #adminContainer
+        #adminHeader
+            button.adminHeaderButtons#addMovieButton(onclick='showAdd()') Add A Movie
+            button.adminHeaderButtons#deleteMovieButton(onclick='showDelete()') Delete A Movie
+        .error #{error.msg}
+        .error #{errorstatus}
+        #add  
+            form#addForm(action="/addMovie" method='POST') 
+                label(for="title") Title:
+                input.inputform(type="text" id="title" name="title")
+                label(for="year") Year:
+                input.inputform(type="text" id="year" name="year")
+                label(for="runtime") Duration (in minutes):
+                input.inputform(type="text" id="runtime" name="runtime")
+                label(for="genre") Genre:
+                select.inputform(type="text" id="genre" name="genre")
+                    option(value="Action") Action
+                    option(value="Adventure") Adventure
+                    option(value="Animation") Animation
+                    option(value="Biography") Biography
+                    option(value="Comedy") Comedy
+                    option(value="Crime") Crime
+                    option(value="Drama") Drama
+                    option(value="Family") Family
+                    option(value="Fantasy") Fantasy
+                    option(value="Film-Noir") Film-Noir
+                    option(value="History") History
+                    option(value="Horror") Horror
+                    option(value="Mystery") Mystery
+                    option(value="Romance") Romance
+                    option(value="Sci-Fi") Sci-Fi
+                    option(value="Sport ") Sport
+                    option(value="Thriller") Thriller
+                label(for="description") Description (220 characters max) :
+                input.inputform(type='text' id="description" name="description")
+                label(for="director") Director:
+                input.inputform(type="text" id="director" name="director")
+                label(for="image") Image link:
+                input.inputform(type="text" id="image" name="image")
+                button#submitbutton(type='submit') Add your New Masterpiece
+        #delete 
+            form(action="/delete-movie" method='POST')
+                label(for="title") Title:
+                input.inputform#deletebar(type="text" name="title")
+                button#submitbutton(type='submit') Send this one to Mordor
