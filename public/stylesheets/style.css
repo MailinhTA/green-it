@@ -1,0 +1,775 @@
+* {
+margin: 0;
+}
+
+.displaybuttons {
+  display:none;
+}
+#blackscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  display: none;
+  opacity: 60%;
+}
+.simplelinks:visited {
+  color:#d2bd96;
+}
+nav a:visited {
+  color:#d2bd96;
+}
+body {
+  background-color: black;
+  padding-bottom: 3%;
+  display: flex;
+  flex-direction: column;
+}
+
+
+#backgroundimage {
+  position: fixed;
+  top: 5%;
+  left: 0;
+  width: 100%;
+  opacity: 30%;
+  z-index: -1;
+  filter:blur(5px) contrast(150%);
+  aspect-ratio: 0.5;
+}
+
+nav {
+  background-color: #3f0502;
+  padding: 10px;
+  font-size: 150%;
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+  
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+  padding-block: 1%;
+}
+
+
+
+nav ul li a {
+  border-radius: 5px;
+  color: #d2bd96;
+  text-decoration: none;
+  padding: 10px 20px;
+
+}
+
+nav ul li a:hover {
+  background-color: #350705;
+  color: #d2bd96;
+}
+
+#loginButton {
+  background-color: #d2bd96;
+  color: #350705;
+  transition: 150ms ease-in all;
+
+}
+
+#loginButton:hover {
+  background-color:#a6926c;
+  color: #350705;
+   
+}
+
+#logo {
+  width:20%;
+  align-self: center;
+  padding-top: 10%;
+    
+}
+#titles {
+  font-size: 150%;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom :10%;
+  color:#d2bd96;
+
+}
+
+#container {
+  color :#d2bd96;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  background-color:#3f0502 ;
+  margin: auto;
+  align-items: center;
+  padding:5%;
+  border-radius: 20px;
+  
+  
+}
+
+#presentation {
+  font-size: 150%;
+  width: 80%;
+  text-align: center;
+}
+
+#links {
+  display: flex;
+  flex-direction: column;
+ 
+  width:30%;
+  margin: auto;
+  margin-top: 3%;
+  text-align: center;
+}
+.redirectlinks {
+  color:#3f0502;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 150%;
+  padding:4% 8%;
+  background-color: #d2bd96;
+  border-radius: 5px;
+  transition: all 150ms ease-in ;
+  margin:1%
+}
+.redirectlinks:hover {
+  background-color: #a6926c;
+  transform: scale(1.05);
+}
+
+.inputform {
+  border:none;
+  color : #d2bd96; 
+  font-size: 120%;
+  background-color: #3f0502;
+  border-bottom: #d2bd96 solid 2px;
+  transition: 150ms ease-in;
+  width:100%;
+  padding: 1% ;
+  margin-block: 1%;
+  
+}
+
+.question .inputform {
+  width:30%
+}
+
+
+.question .inputform:focus {
+  width:40%
+}
+.inputform:focus {
+  outline:none;
+  border-bottom: #a6926c solid 3px;
+  width:120%;
+
+}
+
+#loginform {
+  display: flex;
+  flex-direction: column;
+  width:40%
+  
+}
+
+#submitbutton {
+  color:#3f0502;
+  text-decoration: none;
+  font-size: 150%;
+  padding:2% 4%;
+  background-color: #d2bd96;
+  border-radius: 5px;
+  transition: all 150ms ease-in ;
+  margin:1%;
+  margin-top: 5%;
+  border: none;
+  width: 50%;
+  align-self: center;
+
+}
+
+#submitbutton:hover {
+  background-color: #a6926c;
+  transform: scale(1.05);
+}
+
+#logintitle {
+  font-size: 200%;
+}
+
+#profilecontainer {
+  color :#d2bd96;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  background-color:#3f0502 ;
+  margin: auto;
+  padding:5%;
+  border-radius: 20px;
+  
+}
+
+#profileMovie {
+  display: flex;
+  justify-content: space-between;
+  border-top: solid black 1px;  
+  align-items: center;
+}
+#sidebar {
+  width: 50%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+#sidebar a {
+  text-decoration: none;
+  color: #d2bd96;
+  font-size: 150%;
+  padding: 2% 4%;
+  background-color: #3f0502;
+  border:none;
+  border-top: solid black 1px;
+  transition: all 150ms ease-in;
+  width:70%;
+  }
+
+#sidebar a:last-child {
+  border-bottom: solid black 1px;
+}
+
+#sidebar a:hover {
+  transform: scale(1.05);
+  box-shadow: inset;
+  border-top: solid black 1px;
+  border-bottom: solid black 1px;
+}
+
+#profileinfocontainer {
+  width:80%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+}
+#profilepicture {
+  width: 200px;
+  border-radius: 50%;
+}
+
+#name {
+  font-size: 300%;
+}
+
+
+#moviescontainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
+  gap: 20px;
+  padding: 2%;
+  border:none;
+  }
+
+.moviecontainer {
+    background-color:#3f0502;
+    color : #d2bd96;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    flex: 1 1 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+    transition : all 150ms ease-in;
+    border:none;
+  }
+
+  .moviecontainer:hover {
+    transform: scale(1.05);
+
+  }
+.moviecontainer p {
+  font-size: 150%;
+  color: #d2bd96;
+  margin-bottom: 5%;
+  max-width: 80%;
+}
+
+.moviecontainer img {
+  width: 200px;
+  height: 300px;
+  border-radius: 5px;
+}
+
+.searchfield {
+  margin-left: 2%;
+  font-size: 150%;
+  background-color: #350705;
+  border: none;
+  padding: 1%;
+  border-radius: 8px;
+  color: #d2bd96;
+  transition:all 150ms ease-in;
+}
+
+.searchfield:hover {
+  transform: scale(1.05);
+}
+
+#searchbar::placeholder {
+  color:#86714a;
+}
+
+#searchsubmit {
+  background-color:#d2bd96;
+  color:#3f0502;
+}
+
+#details {
+  display: none;
+  height: 80vh;
+  width: 80vw;
+  background-color: #3f0502;
+  z-index: 3;
+  position:fixed;
+  left:10%;
+  top:10%;
+  border-radius: 20px;
+}
+
+#closeButton {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  border: none;
+  background: none;
+  transition: all 150ms ease-in;
+}
+
+#closeButton:hover{
+  transform: scale(1.2);
+}
+
+#closeButton img {
+  width: 50px;
+  height: 50px;
+}
+
+#movieInfo {
+  width:100%;
+  height: 70%;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10%;
+  
+}
+
+
+#titleAndDescription {
+  max-width: 40%;
+  max-height:80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#currentMovieGenre {
+  font-size: 150%;
+}
+
+#rating {
+  display: flex;
+  width: 50%;
+  justify-content: space-between;
+}
+#confirmRating {
+  font-size: 200%;
+}
+.star {
+  font-size: 4rem;
+  color: #ccc; /* default color */
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
+  
+}
+
+.star.hovered {
+  color: #ffcc00;
+}
+
+
+#rate {
+  font-size: 200%;
+}
+
+#redirectLogin {
+  font-size: 150%;
+  text-decoration: none;
+  color: #a6926c;
+  transition : all 150ms ease-in;
+}
+
+#redirectLogin:hover {
+  color: #86714a;
+}
+
+#restOfTheProfile {
+  margin-top: 5%;
+  display: flex;
+}
+
+.moviecontainerProfile {
+  display: flex;
+  vertical-align: center;
+  align-items: center;
+  justify-content: space-between;
+  padding :1%;
+
+}
+
+#movies {
+  width: 100%;
+}
+.moviecontainerProfile img {
+  max-width: 50px;
+}
+
+.moviecontainerProfile:last-child {
+  border-bottom: solid black 1px;
+
+}
+#grading {
+  display: flex;
+  color: #ffcc00;
+  font-size: 200%;
+  width: 20%;
+  
+
+}
+
+#movieId {
+  display: none;
+}
+
+.deleteButton {
+  
+  border: none;
+  background: none;
+  transition: all 150ms ease-in;
+}
+
+.deleteButton:hover{
+  transform: scale(1.2);
+}
+
+.deleteButton img {
+  width: 50px;
+  height: 50px;
+}
+
+#adminContainer {
+  color :#d2bd96;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  background-color:#3f0502 ;
+  margin: auto;
+  
+  padding:5%;
+  border-radius: 20px;
+}
+
+#adminHeader {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.adminHeaderButtons {
+  font-size: 200%;
+  border-radius: 15px;
+  color: #d2bd96;
+  text-decoration: none;
+  padding: 3% 10% ;
+  border: none;
+  transition: 150ms ease-in all;
+}
+
+
+#addMovieButton {
+  background-color: #d2bd96;
+  color: #350705;
+}
+
+#deleteMovieButton {
+  background-color: #350705;
+  color: #d2bd96;
+}
+
+#delete {
+  display: none;
+  transition: all ease-in 150ms;
+  
+}
+#add {
+  display: flex;
+  justify-content: center;
+  transition: all ease-in 150ms;
+}
+#addForm {
+  width: 40%;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5%;
+}
+
+.error {
+  width : 100%;
+  font-size: 150%;
+  color:#350705;
+  margin-block:1%;
+  border-radius: 5px;
+  background: rgb(211, 143, 143);
+  text-align: center;
+}
+
+#grade {
+  width : 100%;
+  font-size: 150%;
+  color:#154111;
+  margin-block:1%;
+  border-radius: 5px;
+  background: rgb(153, 211, 143);
+  text-align: center;
+}
+
+#deletebar {
+  width:50%;
+}
+
+#quiz {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  align-items: center;
+  margin-top:5%
+}
+.question {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  align-items: center;
+}
+#goToQuizz {
+  font-weight: bolder;
+}
+@media (max-width: 900px) {
+  #logo {
+    width:40%
+  }
+  
+  nav {
+    padding:0;
+    position: absolute;
+    display:none;
+    
+  }
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  nav ul li {
+    width: 100%;
+    text-align: center;
+  }
+
+  nav ul li a{
+
+    width:90%;
+    margin-left:5%;
+    display: block;
+    text-align: center;
+    padding-block:1%;
+    box-sizing: border-box;
+    
+  }
+  nav ul li a:active{
+    background-color: #350705;
+  }
+  
+  #hamburger {
+    width:8%;
+  }
+  .displaybuttons {
+    background-color: #3f0502;
+    border:none;
+    box-shadow: black;
+    display:block
+  }
+  .displaybuttons:active {
+    background-color: #350705; 
+  }
+  #overallNav {
+    position: fixed;
+  }
+  button {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+  a {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+  #moviescontainer {
+    grid-template-columns: repeat(auto-fill, minmax(40%, 1fr));
+
+  }
+  .moviecontainer img {
+    width: 100%;
+    height: 100%;
+  }
+  #submitbutton {
+    width: 100%;
+  }
+  #loginform {
+    width:80%;
+  }
+  #links {
+    width:80%
+  }
+  #filters {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .searchfield {
+    width: 60%;
+    margin-block: 2%;
+  }
+
+  #searchbar {
+    font-size: 100%;
+    padding-block: 3%;
+  }
+  #adminHeader {
+    flex-direction: column;
+    
+  }
+  #addForm {
+    width: 70%;
+  }
+  .adminHeaderButtons {
+    margin-block: 2%;
+  }
+
+  #profileinfocontainer {
+    flex-direction: column;
+  }
+  #profilepicture {
+    width:30%;
+  }
+
+  #profilecontainer {
+    align-items: center;
+
+  }
+  #restOfTheProfile {
+    flex-direction: column;
+    align-items: center;
+  }
+  #sidebar {
+    width:100%;
+    margin-bottom: 10%;
+  }
+  #sidebar a {
+    width: 90%;
+  }
+
+  #profileMovie {
+    width: 100%;
+    flex-direction: column;
+  }
+  .moviecontainerProfile {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    text-align: right;
+    
+  }
+
+  .moviecontainerProfile h2 {
+    font-size: 120%;
+  }
+
+  #grading {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .question {
+    margin-block: 10%;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .question .inputform {
+    margin-top: 1%;
+    width:100%;
+  }
+
+  #currentMovieImage {
+    width: 50%;
+  }
+
+  #movieInfo {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width:100%
+  }
+
+  #currentMovieName {
+    padding-block: 5%;
+  }
+  #movieInfo p {
+    padding-block: 5%;
+    
+  }
+
+  #titleAndDescription {
+    width: 90%;
+    max-width: 90%;
+  }
+  .star {
+    font-size: 300%;
+  }
+  #rating {
+    margin-left: 15%;
+
+  }
+  #closeButton {
+    position: absolute;
+    top: 3%;
+    right: 3%;
+  }
+}
+
+@media (max-width: 400px) {
+  #movieInfo p {
+    padding-block: 1%;
+    
+  }
+
+}
