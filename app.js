@@ -63,18 +63,19 @@ var searchCheck = [
   check('category', 'Invalid genre').isIn(['Action', 'Adventure', 'Animation', 'Biography', 'Comedy', 'Crime', 'Drama', 'Family', 'Fantasy', 'Film-Noir',"History","Horror", "Mystery","Romance","Sci-Fi","Sport","Thriller"]).escape(),
 ]
 const db = mysql.createConnection({
-  host: 'localhost',    
-  user: 'root', 
-  password: '', 
-  database: 'db_movies',
-  port: 3306 
+  host: process.env.DB_HOST || 'localhost',    
+  user: process.env.DB_USER || 'root', 
+  password: process.env.DB_PASSWORD || '', 
+  database: process.env.DB_NAME || 'db_movies',
+  port: process.env.DB_PORT || 3306,
+  ssl: process.env.DB_SSL ? {rejectUnauthorized: false} : false
 });
 const session = require('express-session');
 
 // Connect to the database
 db.connect((err) => {
   if (err) {
-    console.error('Error connecting to the database:', err.message);
+    console.error('Error connecting to the database:', err);
     return;
   }
   console.log('Connected to the MySQL database.');
